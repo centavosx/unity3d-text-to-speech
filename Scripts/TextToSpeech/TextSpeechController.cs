@@ -88,7 +88,7 @@ public class TextSpeechController : MonoBehaviour
     //Settings
     private void _Setting(string code, float pitch, float rate)
     {
-        TextToSpeech.Instance.Setting(code, 1, 1);
+        TextToSpeech.Instance.Setting(code, pitch, rate);
     }
 
 
