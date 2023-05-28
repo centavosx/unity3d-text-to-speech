@@ -58,7 +58,7 @@ public class TextSpeechController : MonoBehaviour
             //Gameobject should be active
             if(item.activeSelf){
                 TMP_Text component = item.GetComponent<TMP_Text>();
-                if(!!item) message+=".\n "+component.text;
+                if(!!component) message+=".\n "+component.text;
             }
 
         string newMessage = Regex.Replace(message, @"<[^>]+>|&nbsp;|&zwnj;|&raquo;|&laquo;", "").Trim();
@@ -72,9 +72,9 @@ public class TextSpeechController : MonoBehaviour
         
         if(autoSpeak) {
             OnStartSpeak();
-        }else{
-            OnStopSpeak();
+            return;
         }
+        OnStopSpeak();
 
     }
 
